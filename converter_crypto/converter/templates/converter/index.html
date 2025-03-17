@@ -1,0 +1,37 @@
+{% extends "converter/base.html" %}
+
+{% block content %}
+    <div class="parent">
+        <div class="form-container">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <label for="amount">Сумма:</label>
+                <input type="text" name="amount" required>
+                {{ form.quntity }}
+                
+                <label for="from_curr">Из валюты:</label>
+                <select name="from_curr" id="from_curr" required>
+                {%for name in coin_list%}
+                        <option value="{{name}}">{{name}}</option>
+                    <!-- Добавьте другие валюты при необходимости -->
+                     {% endfor %} 
+                </select> 
+
+
+                <label for="to_curr">В валюту:</label>
+                <select name="to_curr" id="to_curr" required>
+                {%for name in coin_list%}
+                    <option value="{{name}}">{{name}}</option>
+                    <!-- Добавьте другие валюты при необходимости -->
+                     {% endfor %} 
+                    </select>
+                
+                <label for="output">Итог:</label>
+                <input type="text" name="output" required>
+
+                <button type="submit">Рассчитать</button>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

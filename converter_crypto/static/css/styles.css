@@ -1,0 +1,35 @@
+/* styles.css */
+
+html, body {
+  background:url('../images/btc.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%; /* Устанавливаем высоту в 100% для html и body */
+  margin: 0;    /* Убираем отступы */
+  display: flex; /* Используем Flexbox для body */
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+}
+
+.parent {
+  display: flex; /* Используем Flexbox для родительского контейнера */
+  flex-direction: column; /* Вертикальная компоновка */
+  justify-content: center; /* Центрирование содержимого */
+  align-items: center; /* Центрирование содержимого */
+  width: 100%; /* Ширина 100% */
+  height: 100%; /* Высота 100% для центрирования */
+}
+
+.form-container {
+  width: 600px; /* Ширина формы */
+  padding: 20px; /* Отступы внутри формы */
+  background-color: #709bec; /* Цвет фона формы */
+  border-radius: 8px; /* Закругленные углы */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+.form-container input,
+.form-container select,
+.form-container button {
+  width: 100%; /* Ширина в 100% для всех элементов */
+  margin-bottom: 15px; /* Отступ между элементами */
+}
