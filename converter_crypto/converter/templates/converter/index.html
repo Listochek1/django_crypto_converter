@@ -5,37 +5,47 @@
         <div class="form-container">
             <form action="" method="POST">
                 {% csrf_token %}
-                <label for="amount">Сумма:</label>
-                <input type="text" name="amount" required {% if amount%}value="{{amount}}"{% endif %}>
-                {{ form.quntity }}
-                
-                <label for="from_curr">Из валюты:</label>
-                <select name="from_curr" id="from_curr" required>
-                {%for name in coin_list%}
-                        <option value="{{name}}" {% if from_coin == name%}selected{% endif %}>{{name}}</option>
-                    <!-- Добавьте другие валюты при необходимости -->
-                     {% endfor %} 
-                </select> 
 
-                <label for="to_curr">В валюту:</label>
-                <select name="to_curr" id="to_curr" required>
-                {%for name in coin_list%}
-                    <option value="{{name}}" {% if to_coin == name%}selected{% endif %}>{{name}}</option>
-                    <!-- Добавьте другие валюты при необходимости -->
-                     {% endfor %} 
+                <!-- Блок для ввода суммы -->
+                <div class="form-group">
+                    <label for="amount">Сумма:</label>
+                    <input type="text" name="amount" required {% if amount %}value="{{amount}}"{% endif %}>
+                    {{ form.quntity }}
+                </div>
+
+                <!-- Блок для выбора валюты -->
+                <div class="form-group">
+                    <label for="from_curr">Из валюты:</label>
+                    <select name="from_curr" id="from_curr" required>
+                        {% for name in coin_list %}
+                            <option value="{{name}}" {% if from_coin == name %}selected{% endif %}>{{name}}</option>
+                        {% endfor %} 
+                    </select> 
+
+                    <label for="to_curr">В валюту:</label>
+                    <select name="to_curr" id="to_curr" required>
+                        {% for name in coin_list %}
+                            <option value="{{name}}" {% if to_coin == name %}selected{% endif %}>{{name}}</option>
+                        {% endfor %} 
                     </select>
+                </div>
 
-                <label for="output">Итог:</label>
+                <!-- Блок для отображения итога -->
+                <div class="form-group">
+                    <label for="output">Итог:</label>
                     <input type="text" name="output" required="" readonly="" value="{{ get_price }}">
+                </div>
 
+                <!-- Кнопка отправки -->
                 <button type="submit">Рассчитать</button>
 
-                {% if error%}
-                <label for="output">Ошибка!:</label>
-                <input type="text" name="output" required="" readonly="" value="{{error}}">
+                <!-- Блок для отображения ошибки -->
+                {% if error %}
+                <div class="error-message">
+                    <label for="output">Ошибка!:</label>
+                    <input type="text" name="output" required="" readonly="" value="{{error}}">
+                </div>
                 {% endif %}
-
-                  
 
             </form>
         </div>

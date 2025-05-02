@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль пользователя</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Ссылка на файл стилей -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .profile-info {
+            margin-bottom: 20px;
+        }
+        .profile-info label {
+            font-weight: bold;
+        }
+        .edit-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 15px;
+            background: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+        .edit-button:hover {
+            background: #4cae4c;
+        }
+        .section-title {
+            margin-top: 30px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Профиль пользователя</h1>
+
+    <div class="profile-info">
+        <label for="username">Имя пользователя:</label>
+        <p id="username">ivanov_ivan</p>
+    </div>
+
+    <div class="profile-info">
+        <label for="email">Email:</label>
+        <p id="email">ivanov@example.com</p>
+    </div>
+
+    <div class="profile-info">
+        <label for="joined-date">Дата регистрации:</label>
+        <p id="joined-date">01 января 2020</p>
+    </div>
+
+
+</div>
+
+</body>
+</html>
